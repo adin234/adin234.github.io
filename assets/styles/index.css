@@ -2,7 +2,6 @@ html, body {
 	height: 100%;
 }
 
-
 body {
 	background: #87e0fd; /* Old browsers */
 	background: -moz-radial-gradient(center, ellipse cover,  #87e0fd 0%, #53cbf1 40%, #05abe0 100%); /* FF3.6+ */
@@ -50,4 +49,7 @@ body {
 
 @media screen and (max-width:700px) {
 	/* does nothing*/
+	html, body {
+		height: 100%;
+	}
 }
