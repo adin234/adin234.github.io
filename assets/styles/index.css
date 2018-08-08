@@ -1,3 +1,8 @@
+html, body {
+	height: 100%;
+}
+
+
 body {
 	background: #87e0fd; /* Old browsers */
 	background: -moz-radial-gradient(center, ellipse cover,  #87e0fd 0%, #53cbf1 40%, #05abe0 100%); /* FF3.6+ */
@@ -8,13 +13,13 @@ body {
 	background: radial-gradient(ellipse at center,  #87e0fd 0%,#53cbf1 40%,#05abe0 100%); /* W3C */
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#87e0fd', endColorstr='#05abe0',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
 	font-family: 'Raleway', sans-serif;
-}
-
-.content {
+	
 	text-align: center;
 	position: relative;
-	top: 50%;
-	transform: translateY(-50%);
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	align-items: center;
 }
 
 .content h1 {
@@ -41,4 +46,8 @@ body {
 	color: #fff;
 	text-decoration: none;
 	text-shadow: 2px 2px 2px rgba(150, 150, 150, 1);
+}
+
+@media screen and (max-width:700px) {
+	/* does nothing*/
 }
