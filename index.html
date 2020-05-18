@@ -30,101 +30,15 @@
 			gtag('js', new Date());
 			gtag('config', 'UA-50160042-1');
 		</script>
-
-		<style>
-			#me {
-				display: block;
-			}
-
-			#projects, .back-button {
-				display: none;
-			}
-
-			#projects {
-				padding-top: 50px;
-			}
-
-			h3 {
-				color: white;
-			}
-
-			#more {
-				cursor: pointer;
-			}
-
-			.project {
-				display: flex;
-				flex-direction: row;
-				justify-content: flex-start;
-				text-align: left;
-				max-width: 320px;
-				align-items: center;
-				margin: 5px 0;
-				padding: 5px 0;
-			}
-
-			.project a h3{
-				padding: 0;
-				margin: 0;
-			}
-
-			.project img {
-				width: 100px;
-				height: 100px;
-				flex-shrink: 0;
-				flex-grow: 1;
-			}
-
-			.project .description {
-				margin-left: 10px;
-			}
-
-			.project p {
-				max-height: 100px;
-				overflow: hidden;
-				padding: 0;
-				margin: 0;
-			}
-
-			.project sub {
-				color: #f00;
-				font-size: 0.6rem;
-				margin-top: 1px;
-				display: block;
-				text-align: right;
-			}
-
-			ul, li {
-				list-style: none;
-			}
-
-			ul {
-				padding: 16px;
-			}
-
-			a {
-				text-decoration: none;
-				color: unset;
-			}
-
-			.line-clamp {
-				display: -webkit-box;
-				-webkit-line-clamp: 3;
-				-webkit-box-orient: vertical;
-			}
-
-			.back-button {
-				font-size: 1.5rem;
-				color: white;
-				position: fixed;
-				top: 10px;
-				left: 10px;
-			}
-		</style>
 	</head>
 	<body>
 		<div class="content" id="me">
-			<img src="./assets/images/logo.png" alt="Cartoon Image of adin234" id="more" />
+			<div class="image">
+				<img src="./assets/images/logo.png" alt="Cartoon Image of adin234" id="more" />
+				<hgroup class="speech-bubble">
+					<span>click me for list of projects!</span>
+				</hgroup>
+			</div>
 			<h1>@adin234</h1>
 			<ul class='links'>
 				<li class="link">
@@ -180,7 +94,7 @@
 	</body>
 
 	<script type="text/javascript">
-		const projects = [{
+		const android = {
 			label: 'Android',
 			icon: 'fa-android',
 			items: [{
@@ -219,7 +133,63 @@
 				shortDesc: 'Philstocks Mobile is perfect for traders-on-the-go. Place your trades with ease, check the status of your orders and view your portfolio performance with easy trade access. Fund your account real-time for fast trades. Stay in the know and optimize your trading strategy with detailed real-time stock and market quotes, interactive charts, screeners, customizable watchpack, fresh disclosures and PSE news. Plus share your trading experience with your family and friends via Facebook and Twitter through its Share feature. Experience all these from the palm of your hand anytime, anywhere.',
 				note: '*Early prototype'
 			}]
-		}];
+		};
+
+		const web = {
+			label: 'Web',
+			icon: 'fa-globe',
+			items: [{
+				id: 'com.application.easycover',
+				img: 'https://lh3.googleusercontent.com/J4Txk2CYrrHkn0nKkLb2Cz0Cu_TTF8xHsOaOUmteN55GOs2ZI8uwPac_ttZcoKRRxMM=s360',
+				url: 'https://easycover.my',
+				name: 'EasyCover Web Signup',
+				shortDesc: 'A simple login and signup form written in VueJS to let users signup and update profiles online.',
+				note: '*Started the project from scratch'
+			}, {
+				id: 'com.application.easycover',
+				img: 'https://lh3.googleusercontent.com/J4Txk2CYrrHkn0nKkLb2Cz0Cu_TTF8xHsOaOUmteN55GOs2ZI8uwPac_ttZcoKRRxMM=s360',
+				url: 'https://easycover.my',
+				name: 'EasyCover Dashboard',
+				shortDesc: 'Dashboard written in Laravel PHP to manage Users, Rewards, Contracts, etc. for EasyCover',
+				note: '*Started the project from scratch'
+			}, {
+				id: 'https://www.gamers.tm',
+				img: 'https://pbs.twimg.com/profile_images/770535873351778305/wDc2yfc2_400x400.jpg',
+				url: 'https://old.gamers.tm/?lang=en',
+				name: 'MGN Gamers',
+				shortDesc: 'Currates videos and streams of registered users for their followers',
+				note: '*Early prototype'
+			}, {
+				img: 'https://www.upload.tm/assets/universal-uploader-logo.png',
+				id: 'https://www.upload.tm/',
+				url: 'https://www.upload.tm/',
+				name: 'Upload.tm',
+				shortDesc: 'Reupload your videos from one platform to another, Youtube, Youku, Dailymotion, Vimeo',
+				note: '*Early versions'
+			}]
+		};
+
+		const ios = {
+			label: 'iOS',
+			icon: 'fa-apple',
+			items: [{
+				id: 'id1105200287',
+				img: 'https://is4-ssl.mzstatic.com/image/thumb/Purple128/v4/2e/7c/79/2e7c793f-d1d3-3e2f-96d1-8c1692aeba44/source/512x512bb.jpg',
+				url: 'https://apps.apple.com/jp/app/hacarus/id1105200287',
+				name: 'Hacarus Mobile',
+				shortDesc: 'It is hard to monitor one’s diet and daily meal. To solve this problem, we’ve developed a way to give users personalized recommendation and meal advice based on basic user information. You do not even need to log every meal. Our algorithms will make good recommendation based on little data. The technology that we are using will surely help you manage your meals and diet.',
+				note: '*Contributed to maintenance and feature additions'
+			}, {
+				id: 'id1040036058',
+				img: 'https://pbs.twimg.com/profile_images/770535873351778305/wDc2yfc2_400x400.jpg',
+				url: 'https://apps.apple.com/az/app/mgn-gamers/id1040036058',
+				name: 'MGN Gamers',
+				shortDesc: 'A Mobile app for gamers.tm, lists videos of a gamer you can watch.',
+				note: '*Early prototype'
+			}]
+		};
+
+		const projects = [android, web, ios];
 
 		const callback = (id, url) => {
 			document.getElementById(id).src = url;

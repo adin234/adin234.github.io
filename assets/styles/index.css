@@ -1,5 +1,5 @@
 html, body {
-	height: 100vh;
+	min-height: 100vh;
 	box-sizing: border-box;
 	padding: 0;
 	margin: 0;
@@ -59,4 +59,141 @@ body {
 
 .content h2 i {
 	vertical-align: baseline;
+}
+
+#me {
+	display: block;
+}
+
+#projects, .back-button {
+	display: none;
+}
+
+#projects {
+	padding-top: 50px;
+	columns: 320px 3;
+}
+
+h3 {
+	color: white;
+}
+
+#more {
+	cursor: pointer;
+}
+
+.projects {
+	display: block;
+	break-inside: avoid;
+}
+
+.projects ul {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.project {
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+	text-align: left;
+	max-width: 320px;
+	align-items: center;
+	margin: 5px 0;
+	padding: 5px 0;
+}
+
+.project a h3{
+	padding: 0;
+	margin: 0;
+}
+
+.project img {
+	width: 100px;
+	height: 100px;
+	flex-shrink: 0;
+	flex-grow: 1;
+}
+
+.project .description {
+	margin-left: 10px;
+}
+
+.project p {
+	max-height: 100px;
+	overflow: hidden;
+	padding: 0;
+	margin: 0;
+}
+
+.project sub {
+	color: #f00;
+	font-size: 0.6rem;
+	margin-top: 1px;
+	display: block;
+	text-align: right;
+}
+
+ul, li {
+	list-style: none;
+}
+
+ul {
+	padding: 16px;
+}
+
+a {
+	text-decoration: none;
+	color: unset;
+}
+
+.line-clamp {
+	display: -webkit-box;
+	-webkit-line-clamp: 3;
+	-webkit-box-orient: vertical;
+}
+
+.back-button {
+	font-size: 1.5rem;
+	color: white;
+	position: fixed;
+	top: 10px;
+	left: 10px;
+}
+
+.image {
+	position: relative;
+}
+
+.speech-bubble {
+	background: #33beea;
+	border-radius: .4em;
+
+
+	position: absolute;
+	right: -20px;
+	top: -20px;
+	transform: rotate(20deg);
+	width: 100px;
+	padding: 10px;
+	color: white;
+	-webkit-box-shadow: 3px 4px 5px -3px rgba(0,0,0,0.75);
+	-moz-box-shadow: 3px 4px 5px -3px rgba(0,0,0,0.75);
+	box-shadow: 3px 4px 5px -3px rgba(0,0,0,0.75);
+}
+
+.speech-bubble:after {
+	content: '';
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+	width: 0;
+	height: 0;
+	border: 15px solid transparent;
+	border-top-color: #33beea;
+	border-bottom: 0;
+	border-left: 0;
+	margin-left: -7.5px;
+	margin-bottom: -15px;
 }
