@@ -3,25 +3,25 @@
 	<head>
 		<title>Aldrin Bautista (adin234) - Software Developer - Android, Javascript</title>
 		<link href='//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css' rel='stylesheet' type='text/css'>
-		<link href='./assets/styles/index.min.css' rel='stylesheet' type='text/css'>
+		<link href='./assets/styles/index.css' rel='stylesheet' type='text/css'>
 		<link href='./assets/styles/railway.min.css' rel='stylesheet' type='text/css'>
 		<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
 		<link rel="icon" href="/favicon.ico" type="image/x-icon">
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>
-		
+
 		<meta name="description" content="Aldrin Bautista (adin234)'s Landing page still under construction. Does Android and Web Development">
 		<meta name="author" content="Aldrin Garcia Bautista">
 		<meta name="keywords" content="aldrin,bautista,adin234,software,developer,javascript,android">
-		
-		<meta property="og:url" content="http://adin234.com/">
+
+		<meta property="og:url" content="https://adin234.github.io/">
 		<meta property="og:title" content="Aldrin Bautista (adin234)">
 		<meta property="og:site_name" content="adin234">
 		<meta property="og:description" content="Aldrin Bautista (adin234)'s Landing page still under construction. Does Android and Web Development">
-		<meta property="og:image" content="http://adin234.com/assets/images/logo.png">
+		<meta property="og:image" content="https://adin234.github.io//assets/images/logo.png">
 		<meta property="og:image:type" content="image/png">
 		<meta property="og:image:width" content="250">
 		<meta property="og:image:height" content="250">
-		
+
 		<!-- Global site tag (gtag.js) - Google Analytics -->
 		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-50160042-1"></script>
 		<script>
@@ -30,10 +30,101 @@
 			gtag('js', new Date());
 			gtag('config', 'UA-50160042-1');
 		</script>
+
+		<style>
+			#me {
+				display: block;
+			}
+
+			#projects, .back-button {
+				display: none;
+			}
+
+			#projects {
+				padding-top: 50px;
+			}
+
+			h3 {
+				color: white;
+			}
+
+			#more {
+				cursor: pointer;
+			}
+
+			.project {
+				display: flex;
+				flex-direction: row;
+				justify-content: flex-start;
+				text-align: left;
+				max-width: 320px;
+				align-items: center;
+				margin: 5px 0;
+				padding: 5px 0;
+			}
+
+			.project a h3{
+				padding: 0;
+				margin: 0;
+			}
+
+			.project img {
+				width: 100px;
+				height: 100px;
+				flex-shrink: 0;
+				flex-grow: 1;
+			}
+
+			.project .description {
+				margin-left: 10px;
+			}
+
+			.project p {
+				max-height: 100px;
+				overflow: hidden;
+				padding: 0;
+				margin: 0;
+			}
+
+			.project sub {
+				color: #f00;
+				font-size: 0.6rem;
+				margin-top: 1px;
+				display: block;
+				text-align: right;
+			}
+
+			ul, li {
+				list-style: none;
+			}
+
+			ul {
+				padding: 16px;
+			}
+
+			a {
+				text-decoration: none;
+				color: unset;
+			}
+
+			.line-clamp {
+				display: -webkit-box;
+				-webkit-line-clamp: 3;
+				-webkit-box-orient: vertical;
+			}
+
+			.back-button {
+				font-size: 1.5rem;
+				color: white;
+				position: fixed;
+				top: 10px;
+				left: 10px;
+			}
+		</style>
 	</head>
 	<body>
-		<div class="content">
-			<img src="./assets/images/logo.png" alt="Cartoon Image of adin234" />
+		<div class="content" id="me">
+			<img src="./assets/images/logo.png" alt="Cartoon Image of adin234" id="more" />
 			<h1>@adin234</h1>
 			<ul class='links'>
 				<li class="link">
@@ -56,5 +147,131 @@
 				</li>
 			</ul>
 		</div>
+		<div class="back-button">
+			<a href="#"><i class="fa fa-caret-left fa-lg"></i> Back</a>
+		</div>
+		<div class="content" id="projects">
+			<section class="projects" id="android">
+				<h2><i class="fa fa-android fa-lg"></i> Android</h2>
+			</section>
+		</div>
+		<script type="text/html" id="projectLayout">
+			<section class="projects" id="{{icon}}">
+				<h2><i class="fa {{icon}} fa-lg"></i> {{label}}</h2>
+				<ul>
+				{{items}}
+				</ul>
+			</section>
+		</script>
+		<script type="text/html" id="itemLayout">
+			<li class="project">
+					<img src="{{img}}" id="{{id}}" />
+					<div class="description">
+						<a href="{{url}}" target="_blank"><h3>{{name}}</h3></a>
+						<div class="line-clamp">
+							<p>{{shortDesc}}</p>
+						</div>
+						<sub>{{note}}</sub>
+					</div>
+				</a>
+			</li>
+		</script>
+
 	</body>
+
+	<script type="text/javascript">
+		const projects = [{
+			label: 'Android',
+			icon: 'fa-android',
+			items: [{
+				id: 'com.application.easycover',
+				img: 'https://lh3.googleusercontent.com/J4Txk2CYrrHkn0nKkLb2Cz0Cu_TTF8xHsOaOUmteN55GOs2ZI8uwPac_ttZcoKRRxMM=s360',
+				url: 'https://play.google.com/store/apps/details?id=com.application.easycover',
+				name: 'EasyCover MY',
+				shortDesc: 'EasyCover app is a mobile service platform application for general public who wish to submit request for insurance quotes & hence translate as warm leads to insurance professionals.',
+				note: '*Started the project from scratch'
+			}, {
+				id: 'com.hacarus.mobile.v2',
+				img: 'https://is4-ssl.mzstatic.com/image/thumb/Purple128/v4/2e/7c/79/2e7c793f-d1d3-3e2f-96d1-8c1692aeba44/source/512x512bb.jpg',
+				url: 'https://play.google.com/store/apps/details?id=com.hacarus.mobile.v2',
+				name: 'Hacarus Mobile',
+				shortDesc: 'It is hard to monitor one’s diet and daily meal. To solve this problem, we’ve developed a way to give users personalized recommendation and meal advice based on basic user information. You do not even need to log every meal. Our algorithms will make good recommendation based on little data. The technology that we are using will surely help you manage your meals and diet.',
+				note: '*Started the project from scratch'
+			}, {
+				id: 'com.prioriti.smartshopper',
+				img: 'https://lh3.googleusercontent.com/nAOY0W9IYKRIDvjFz5C4JySkqxJXkOO-I-q6V6Q0LCzt3KJ2GaLUGt8VUty9M2JAZ5cA=s360',
+				url: 'https://play.google.com/store/apps/details?id=com.prioriti.smartshopper&hl=en',
+				name: 'Prioriti Shopper',
+				shortDesc: 'Using AI technology, the shopping experience is personalized and customized always been a priority for the priority. We understand that shopping is like science and every buyer is unique, therefore we take you to the shopping experience Smart (Smart Shopping) who understand who you are based on your profile and are designed in accordance with the deals you need.',
+				note: '*Maintenance and small feature additions'
+			}, {
+				id: 'ph.billeasev2.mobile',
+				img: 'https://lh3.googleusercontent.com/fN1vwnCfKIhMEm9eDLIE86aUsaSE2p3Hne5hnUJCIZV0QTEfXWurPK6IeV6Wm7cQJpfi=s360',
+				url: 'https://play.google.com/store/apps/details?id=ph.billeasev2.mobile',
+				name: 'BillEase – Installments for Lazada',
+				shortDesc: 'Want to purchase an item from Lazada but quickly realized you can\'t afford it? Want to avail an installment plan but have no credit card to do so ? Worry not, because BillEase has got you covered.',
+				note: '*Released the early prototype'
+			}, {
+				id: 'apps.philstocks.ph',
+				img: 'https://lh3.googleusercontent.com/4WZJMHMC5KbCDTQcTx652pQIiejftohwW5XVv571M2tExNRr8fkPPma907naXZMdkFYA=s360',
+				url: 'https://play.google.com/store/apps/details?id=apps.philstocks.ph',
+				name: 'Philstocks Mobile',
+				shortDesc: 'Philstocks Mobile is perfect for traders-on-the-go. Place your trades with ease, check the status of your orders and view your portfolio performance with easy trade access. Fund your account real-time for fast trades. Stay in the know and optimize your trading strategy with detailed real-time stock and market quotes, interactive charts, screeners, customizable watchpack, fresh disclosures and PSE news. Plus share your trading experience with your family and friends via Facebook and Twitter through its Share feature. Experience all these from the palm of your hand anytime, anywhere.',
+				note: '*Early prototype'
+			}]
+		}];
+
+		const callback = (id, url) => {
+			document.getElementById(id).src = url;
+		}
+
+		document.getElementById("more").addEventListener('click', () => {
+			document.getElementById('projects').style.display = 'block';
+			document.getElementById('me').style.display = 'none';
+			document.getElementsByClassName('back-button')[0].style.display = 'block';
+		});
+
+		document.getElementsByClassName('back-button')[0].addEventListener('click', () => {
+			document.getElementById('projects').style.display = 'none';
+			document.getElementById('me').style.display = 'block';
+			document.getElementsByClassName('back-button')[0].style.display = 'none';
+		});
+
+		const projectsHtml = projects.map((project) => {
+			const { items, ...proj } = project;
+			let itemLayout = `${document.getElementById('itemLayout').innerHTML}`;
+			const itemsHtml = items.map((item) => {
+				let baseString = `${itemLayout}`;
+				Object.keys(item).forEach((key) => {
+					baseString = baseString.replace(new RegExp(`{{${key}}}`, 'g'), item[key]);
+				});
+
+				if (project.label === 'Android') {
+					((mItem) => {
+						fetch(`https://powerful-chamber-95026.herokuapp.com/${mItem.id}`)
+							.then((res, b) => {
+								if (res.status === 200) {
+									res.json().then((json) => {
+										callback(mItem.id, json.url);
+									});
+								}
+							});
+					})(item);
+				}
+
+				return baseString;
+			}).join('');
+
+			let projectLayout = `${document.getElementById('projectLayout').innerHTML}`;
+
+			Object.keys(proj).forEach((key) => {
+				projectLayout = projectLayout.replace(new RegExp(`{{${key}}}`, 'g'), proj[key]);
+			});
+
+			return projectLayout.replace('{{items}}', itemsHtml);
+		}).join('');
+
+		document.getElementById('projects').innerHTML = projectsHtml;
+
+	</script>
 </html>
